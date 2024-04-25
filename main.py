@@ -21,7 +21,7 @@ if not error:
     #cv2.imwrite("stitchedOutput.png", stitched_img)
     cv2.imshow("Stitched Image", stitched_img)
     cv2.waitKey(0)
-'''
+
 
 img1 = cv2.imread("GrayBot.png")
 img2 = cv2.imread("GrayTop.png")
@@ -78,9 +78,11 @@ print("Точность совпадения:", len(good_points) / number_keypoi
 
 result = cv2.drawMatches(img1, kp_1, img2, kp_2, good_points, None)
 
+cv2.imwrite("result1.png", result)
 cv2.imshow("Result", result)
 cv2.waitKey(0)
 
+'''
 img_rgb = cv2.imread('board1top.png')
 assert img_rgb is not None, "file could not be read, check with os.path.exists()"
 img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
